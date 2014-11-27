@@ -6,6 +6,7 @@ ruby '2.1.5'
 gem 'rails', '4.2.0.beta4'
 gem 'pg'
 gem 'spring', groups: [:development, :test]
+gem 'spring-commands-rspec', group: :development
 
 # ASSETS
 gem 'turbolinks'
