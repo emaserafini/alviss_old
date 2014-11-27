@@ -28,3 +28,7 @@ group :development, :test do
   gem 'web-console', '~> 2.0.0.beta4'
 end
 
+# TEST
+group :test do
+  gem 'rspec-rails', '~> 3.1.0', group: :development
+end
