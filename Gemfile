@@ -20,7 +20,7 @@ gem 'rails_12factor', group: :production
 gem 'passenger'
 
 # MONITORING
-gem 'skylight'
+gem 'skylight', group: :production
 
 # DEBUG
 group :development, :test do
