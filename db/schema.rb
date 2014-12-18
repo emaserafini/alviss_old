@@ -11,10 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141217114002) do
+ActiveRecord::Schema.define(version: 20141217114238) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "data_temperatures", force: true do |t|
+    t.integer  "feed_id"
+    t.decimal  "value",      precision: 5, scale: 2
+    t.datetime "created_at",                         null: false
+    t.datetime "updated_at",                         null: false
+  end
+
+  add_index "data_temperatures", ["feed_id"], name: "index_data_temperatures_on_feed_id", using: :btree
 
   create_table "feeds", force: true do |t|
     t.string   "name"
