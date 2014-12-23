@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   namespace :api do
     resources :feeds, only: [:show] do
       resources :data_temperatures, only: [:index, :show, :create]
+      # get 'current_data', on: :member
+      get 'latest', on: :member
     end
   end
 
