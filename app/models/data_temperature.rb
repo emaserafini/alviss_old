@@ -3,5 +3,5 @@ class DataTemperature < ActiveRecord::Base
 
   scope :from_feed, -> (id) { where(feed_id: id) }
 
-  scope :latest, -> (num) { order('created_at ASC').limit(num) }
+  scope :latest, -> (num) { order('created_at DESC').limit(num) }
 end
