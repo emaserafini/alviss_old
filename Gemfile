@@ -20,7 +20,7 @@ gem 'coffee-rails', '~> 4.1.0'
 
 # HEROKU
 gem 'rails_12factor', group: :production
-gem 'passenger'
+gem 'unicorn'
 
 # MONITORING
 gem 'skylight', group: :production
