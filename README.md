@@ -33,3 +33,6 @@ https://www.airpair.com/ruby-on-rails/posts/building-a-restful-api-in-a-rails-ap
 
 "Accurate LM35 readings"
 http://www.ogalik.ee/accurate-lm35-reading/
+
+"Restful Rails API, Just Add Water"
+https://codelation.com/blog/rails-restful-api-just-add-water
