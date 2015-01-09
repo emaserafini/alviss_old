@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 20141217114238) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "data_temperatures", force: true do |t|
+  create_table "data_temperatures", force: :cascade do |t|
     t.integer  "feed_id"
     t.decimal  "value",      precision: 5, scale: 2
     t.datetime "created_at",                         null: false
@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(version: 20141217114238) do
 
   add_index "data_temperatures", ["feed_id"], name: "index_data_temperatures_on_feed_id", using: :btree
 
-  create_table "feeds", force: true do |t|
+  create_table "feeds", force: :cascade do |t|
     t.string   "name"
     t.string   "data_kind"
     t.datetime "created_at", null: false
