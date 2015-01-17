@@ -1,0 +1,16 @@
+= form_for @thermostat do |f|
+  - if @thermostat.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@thermostat.errors.count, "error")} prohibited this thermostat from being saved:"
+      %ul
+        - @thermostat.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :mode
+    = f.select :mode, options_for_select(Thermostat.modes.keys.to_a.map { |w| [w.humanize, w] }, selected: @thermostat.mode)
+  .field
+    = f.label :status
+    = f.select :status, options_for_select(Thermostat.statuses.keys.to_a.map { |w| [w.humanize, w] }, selected: @thermostat.status)
+  .actions
+    = f.submit 'Save'

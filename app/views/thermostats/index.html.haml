@@ -1,0 +1,23 @@
+%h1 Listing thermostats
+
+%table
+  %thead
+    %tr
+      %th Mode
+      %th Status
+      %th
+      %th
+      %th
+      
+  %tbody
+    - @thermostats.each do |thermostat|
+      %tr
+        %td= thermostat.mode
+        %td= thermostat.status
+        %td= link_to 'Show', thermostat
+        %td= link_to 'Edit', edit_thermostat_path(thermostat)
+        %td= link_to 'Destroy', thermostat, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Thermostat', new_thermostat_path

@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%p
+  %b Mode:
+  = @thermostat.mode
+%p
+  %b Status:
+  = @thermostat.status
+
+= link_to 'Edit', edit_thermostat_path(@thermostat)
+\|
+= link_to 'Back', thermostats_path
