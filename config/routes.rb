@@ -17,6 +17,10 @@ Rails.application.routes.draw do
     end
   end
 
+  namespace :api_raw do
+    get 'thermostats/:thermostat_id/current_status' => 'thermostats#current_status', as: :thermostat_current_status
+  end
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
