@@ -18,7 +18,10 @@ Rails.application.routes.draw do
   end
 
   namespace :api_raw do
-    get 'thermostats/:thermostat_id/current_status' => 'thermostats#current_status', as: :thermostat_current_status
+    resources :thermostats, only: :show do
+      get 'current_status', on: :member
+    end
+    get 'thermostats/:id/current_status' => 'thermostats#current_status', as: :thermostat_current_status
   end
 
   # Example of regular route:
