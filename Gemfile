@@ -18,6 +18,8 @@ gem 'haml-rails'
 gem 'sass-rails', '~> 5.0'
 gem 'coffee-rails', '~> 4.1.0'
 
+gem 'foundation-rails'
+
 # HEROKU
 gem 'rails_12factor', group: :production
 gem 'unicorn'
