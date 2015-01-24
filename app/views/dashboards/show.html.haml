@@ -1,0 +1,11 @@
+.row
+  .large-3.medium-4.columns
+    .hide-for-small
+  .large-9.medium-8.columns
+    %h1#thermostat Thermostat
+    #temperature{:data => {latest_temperature_url: latest_api_feed_url(1)}}
+      Temperatura corrente:
+      %span --
+      °C
+    Temperatura desiderata: 22°C
+
