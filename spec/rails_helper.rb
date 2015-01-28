@@ -50,4 +50,6 @@ RSpec.configure do |config|
 
   # Factory Girl
   config.include FactoryGirl::Syntax::Methods
+
+  config.alias_example_to :fit, :focus => true
 end
