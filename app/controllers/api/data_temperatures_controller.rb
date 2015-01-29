@@ -1,4 +1,4 @@
-module Api
+module API
   class DataTemperaturesController < BaseController
     before_action :authenticate, only: :create
 

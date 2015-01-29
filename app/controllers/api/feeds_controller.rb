@@ -1,4 +1,4 @@
-module Api
+module API
   class FeedsController < BaseController
 
     def show

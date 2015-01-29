@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe Api::DataTemperaturesController, :type => :controller do
+RSpec.describe API::DataTemperaturesController, :type => :controller do
   let!(:feed) { create(:feed) }
 
   describe 'GET #index' do
