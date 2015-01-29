@@ -1,11 +1,12 @@
 module Api
   class DataTemperaturesController < BaseController
+    before_action :authenticate, only: :create
 
     def index
       if current_feed && current_feed.data.any?
         render json: current_feed.data
       else
-        render json: {}, status: :not_found
+        render json: [], status: :not_found
       end
     end
 
@@ -14,7 +15,7 @@ module Api
       if temperature
         render json: temperature
       else
-        render json: {}, status: :not_found
+        render json: [], status: :not_found
       end
     end
 

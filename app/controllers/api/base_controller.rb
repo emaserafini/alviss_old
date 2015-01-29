@@ -1,13 +1,21 @@
 module Api
   class BaseController < ActionController::Base
-    protect_from_forgery
-    skip_before_action :verify_authenticity_token, if: :json_request?
-
-
     protected
 
-    def json_request?
-      request.format.json?
+
+    def authenticate
+      authenticate_token || render_unauthorized
+    end
+
+    def authenticate_token
+      authenticate_with_http_token do |token, options|
+        token == 'valid_token'
+      end
+    end
+
+    def render_unauthorized
+      self.headers['WWW-Authenticate'] = 'Token realm="Application"'
+      render json: 'invalid token', status: 401
     end
   end
 end
