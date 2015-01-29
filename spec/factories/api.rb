@@ -5,7 +5,7 @@ FactoryGirl.define do
   end
 
 
-  factory :temperature do
+  factory :data_temperature do
     value 20
   end
 end
