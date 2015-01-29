@@ -2,16 +2,19 @@
 curl -v alviss.dev/api/feeds/1/data_temperatures -X POST \
      -H "Accept: application/json" \
      -H "Content-Type: application/json" \
+     -H 'Authorization: Token token="valid_token"' \
      -d '{"data_temperature": {"value": 20}}'
 
 curl -v localhost:3000/api/feeds/1/data_temperatures -X POST \
      -H "Accept: application/json" \
      -H "Content-Type: application/json" \
+     -H 'Authorization: Token token="valid_token"' \
      -d '{"data_temperature": {"value": 20}}'
 
 curl -v alviss.herokuapp.com/api/feeds/1/data_temperatures -X POST \
      -H "Accept: application/json" \
      -H "Content-Type: application/json" \
+     -H 'Authorization: Token token="valid_token"' \
      -d '{"data_temperature": {"value": 20}}'
 
 # index
