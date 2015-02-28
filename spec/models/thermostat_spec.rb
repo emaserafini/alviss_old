@@ -9,8 +9,8 @@ RSpec.describe Thermostat, type: :model do
       end
     end
 
-    pending 'builds a class name from active_mode' do
-      expect(subject).to receive(:active_mode).and_return(:manual)
+    it 'builds a class name from active_mode' do
+      expect(subject).to receive(:active_mode).and_return(:manual).at_least(:once)
       subject.operating_mode
     end
   end
