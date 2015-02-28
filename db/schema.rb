@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150228111640) do
+ActiveRecord::Schema.define(version: 20150228163007) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,6 +31,19 @@ ActiveRecord::Schema.define(version: 20150228111640) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "manual_modes", force: :cascade do |t|
+    t.integer  "thermostat_id"
+    t.decimal  "setpoint_temperature",  precision: 5, scale: 2
+    t.decimal  "deviation_temperature", precision: 5, scale: 2
+    t.integer  "minimum_run"
+    t.integer  "feed_temperature_id"
+    t.integer  "feed_status_id"
+    t.datetime "created_at",                                    null: false
+    t.datetime "updated_at",                                    null: false
+  end
+
+  add_index "manual_modes", ["thermostat_id"], name: "index_manual_modes_on_thermostat_id", using: :btree
 
   create_table "thermostats", force: :cascade do |t|
     t.string   "name"
