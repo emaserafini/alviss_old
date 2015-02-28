@@ -11,4 +11,9 @@ class Feed < ActiveRecord::Base
   def latest_data(num = 1)
     data.latest num
   end
+
+  def current_data
+    # to be implemented
+    data.latest 1
+  end
 end
