@@ -39,3 +39,6 @@ http://www.ogalik.ee/accurate-lm35-reading/
 
 "Restful Rails API, Just Add Water"
 https://codelation.com/blog/rails-restful-api-just-add-water
+
+rails g model stream name kind token
+rails g model datapoint::temperature stream:references value:decimal{5.2} scale:integer
